@@ -1,0 +1,19 @@
+.text {
+  text-align: center;
+  text-shadow: 7px 1px 10px #4a4747;
+}
+.boxstyle {
+  width: 50%;
+  border-radius: 50px;
+  box-shadow: 1px 3px 11px 7px black;
+}
+
+.boxstyle {
+  position: relative;
+  left: 300px;
+  top: 50px;
+}
+.text {
+  position: relative;
+  font-size: 60px;
+}

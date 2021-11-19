@@ -1,0 +1,27 @@
+<body  style=" background-image: url(https://images.unsplash.com/photo-1452827073306-6e6e661baf57?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80); background-repeat: no-repeat;background-size: cover;">
+
+{{#if length}}
+<div style="margin:20px;">
+<h1>Your blogs dashbord </h1>
+<ul>
+  {{#each blog}}
+  <li style="list-style-type: none;">
+  <h5>{{this.title}}</h5>
+  <p style="width: 500px;">{{this.content}}</p>
+   <a href={{constructUpdate}}><button class="btn btn-success">Edit</button></a>
+   <br>
+    <form action={{constructDelete}} method="POST">
+      <br>
+     <button type="submit" class="btn btn-danger">Delete blog</button>
+    </form>
+    </li>
+    <br>
+  {{/each}}
+  
+  <a href='/blog/create'><button class="btn btn-info">Create a new blog</button></a>
+</ul>
+{{else}}
+<h1>Hey {{name}}. Create a new blog <a href='/blog/create'>here</a></h1>
+{{/if}}
+</div>
+</body>

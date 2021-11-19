@@ -1,0 +1,10 @@
+const express=require("express")
+const router=express.Router()
+const authenticate=require("../middleware/authenticate")
+const isAdmin = require("../middleware/isAdmin")
+const blogApicontroller=require("../controllers/blogApicontroller")
+router.post("/blog/create",isAdmin,authenticate,blogApicontroller.createBlog)
+router.put("/blog/update/:blogId",isAdmin,authenticate,blogApicontroller.updateBlog)
+router.delete("/blog/delete/:blogId",isAdmin,authenticate,blogApicontroller.deleteBlog)
+router.get("/",authenticate,blogApicontroller.homepage)
+module.exports=router  
